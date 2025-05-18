@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beelingua Redesign</title>
+    <link rel="stylesheet" href="../styles.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+        <div class="question-header">
+            Question <strong>5 of 5</strong></p>
+        </div>
+
+        <p class="instruction">
+            Translate this sentence.
+        </p>
+        <div class="sentence-box">
+            <span>How are you?</span>
+        </div>
+
+        <div id="answerSection">
+            <div class="answer-box" id="answerBox"></div>
+
+            <div class="word-bank" id="wordBank">
+                <button class="word-tile">吗</button>
+                <button class="word-tile">好</button>
+                <button class="word-tile">见</button>
+                <button class="word-tile">再</button>
+                <button class="word-tile">我</button>
+                <button class="word-tile">你</button>
+            </div>
+
+            <p class="or">— or —</p>
+
+            <textarea
+                id="manualInput"
+                rows="2"
+                placeholder="Type your answer here instead..."
+                class="manual-input"
+            ></textarea>
+        </div>
+        
+        <div class="bottom-section">
+            <div class="button-group">
+                <button class="nav-btn previous-button" onclick="window.location.href='question4.html'">
+                    <span class="arrow">◀</span>
+                    Previous
+                </button>
+                <button class="nav-btn continue-button" id="checkButton">
+                    Check my answer
+                    <span class="arrow">▶</span>
+                </button>
+            </div>
+            <div class="character-wrapper">
+                <img src="../assets/mat_the_pat.png" alt="Person" class="illustration" />
+                <div class="speech-bubble" id="speechBubble">
+                    Great job!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/script5.js"></script>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beelingua Redesign</title>
+    <link rel="stylesheet" href="../styles.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+        <div class="question-header">
+            Question <strong>1 of 5</strong></p>
+        </div>
+
+        <p class="instruction">
+            Match the appropriate vocabulary to the incomplete sentence by dragging
+            and dropping the vocabulary terms listed below into the blank space.
+        </p>
+
+        <div class="sentence1">
+            <p>
+                The new policy was expected to 
+                <span class="drop-zone" ondrop="drop(event)" ondragover="previewText(event)" ondragleave="resetPreview(event)">______</span> 
+                positive changes in the company's culture. 
+            </p>
+        </div>
+
+        <div class="choices">
+            <button class="choice" draggable="true" ondragstart="drag(event)">auspiciously</button>
+            <button class="choice" draggable="true" ondragstart="drag(event)">brush off</button>
+            <button class="choice" draggable="true" ondragstart="drag(event)">superstitious</button>
+            <button class="choice" draggable="true" ondragstart="drag(event)">omen</button>
+            <button class="choice" draggable="true" ondragstart="drag(event)" id="correct">bring about</button>
+        </div>
+
+        <div class="bottom-section">
+            <div class="button-group">
+                <button class="nav-btn previous-button active">
+                    <span class="arrow">◀</span>
+                    Previous
+                </button>
+                <button class="nav-btn continue-button" id="checkButton">
+                    Check my answer
+                    <span class="arrow">▶</span>
+                </button>
+            </div>
+            <div class="character-wrapper">
+                <img src="../assets/mat_the_pat.png" alt="Person" class="illustration" />
+                <div class="speech-bubble" id="speechBubble">
+                    Great job!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/script1.js"></script>
+  </body>
+</html>
