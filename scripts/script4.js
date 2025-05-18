@@ -4,7 +4,7 @@ let currentQuestionIndex = 0;
 
 const questionTabs = document.querySelectorAll('.question-tab');
 const input = document.querySelectorAll('.answer');
-const nextButton = document.getElementById('next-btn');
+const nextButton = document.getElementById('nxt-btn');
 const questions = [
     {
         question: "What is the main idea of the first paragraph?",
@@ -111,7 +111,7 @@ function checkAnswer(isCorrectAll) {
     }
 }
 
-document.getElementById("next-btn").addEventListener("click", () => {
+document.getElementById("nxt-btn").addEventListener("click", () => {
     if (currentQuestionIndex < 2) {
         currentQuestionIndex++;
         const nextTab = document.querySelector(`.question-tab[data-index="${currentQuestionIndex}"]`);
@@ -120,7 +120,6 @@ document.getElementById("next-btn").addEventListener("click", () => {
 
         nextTab.classList.add('active');
 
-        currentQuestionIndex = nextIndex;
         renderQuestion(currentQuestionIndex);
     }
 });
