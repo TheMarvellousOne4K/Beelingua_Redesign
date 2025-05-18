@@ -1,9 +1,10 @@
 const isCorrect = new Array(3).fill(false);
 let isCorrectAll = false;
+let currentQuestionIndex = 0;
 
 const questionTabs = document.querySelectorAll('.question-tab');
 const input = document.querySelectorAll('.answer');
-
+const nextButton = document.getElementById('next-btn');
 const questions = [
     {
         question: "What is the main idea of the first paragraph?",
@@ -22,8 +23,6 @@ const questions = [
     }
 ];
 
-let currentQuestionIndex = 0;
-
 function renderQuestion(index) {
     const question = questions[index];
     const container = document.querySelector('.question-content');
@@ -41,7 +40,6 @@ function renderQuestion(index) {
         </div>
     `;
 
-    // Reset selected state
     let selectedIndex = null;
     const answers = document.querySelectorAll('.answer');
 
@@ -112,6 +110,20 @@ function checkAnswer(isCorrectAll) {
         showSpeechBubble("All questions must be correct!");
     }
 }
+
+document.getElementById("next-btn").addEventListener("click", () => {
+    if (currentQuestionIndex < 2) {
+        currentQuestionIndex++;
+        const nextTab = document.querySelector(`.question-tab[data-index="${currentQuestionIndex}"]`);
+        renderQuestion(currentQuestionIndex);
+        questionTabs.forEach(t => t.classList.remove('active'));
+
+        nextTab.classList.add('active');
+
+        currentQuestionIndex = nextIndex;
+        renderQuestion(currentQuestionIndex);
+    }
+});
   
 document.getElementById("checkButton").addEventListener("click", function () {
     for(let i = 0; i < isCorrect.length; i++)

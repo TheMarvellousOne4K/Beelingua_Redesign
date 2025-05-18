@@ -19,8 +19,9 @@ wordBank.addEventListener("click", function (e) {
         const tile = document.createElement("button");
         tile.classList.add("word-tile", "filled");
         tile.textContent = word;
-        // ans.classList.add('disabled');
+        e.target.classList.add('disabled');
         tile.addEventListener("click", function () {
+            e.target.classList.remove('disabled');
             answerBox.removeChild(tile);
             userAnswer = userAnswer.filter(w => w !== word);
         });

@@ -326,6 +326,13 @@ body {
     opacity: 0.6;
 }
 
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
 .check-button-container {
     margin-top: 20px;
     text-align: center;
@@ -334,7 +341,7 @@ body {
 .check-btn {
     background-color: #8CD2E3;
     color: white;
-    border: none;
+    border: 2px solid #8CD2E3;
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 10px;
@@ -344,6 +351,26 @@ body {
 
 .check-btn:hover {
     background-color: #5dc4d3;
+}
+
+.next-button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.next-btn {
+    background-color: white;
+    color: #8CD2E3;
+    border: 2px solid #8CD2E3;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.next-btn:hover {
+    background-color: #d4f0ff;
 }
 
 /* Question 5 (Japanese/Chinese Characters) */
