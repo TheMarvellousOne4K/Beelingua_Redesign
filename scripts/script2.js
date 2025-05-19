@@ -1,13 +1,9 @@
 let isCorrect = false;
-let allowInput = true;
 
 const input = document.querySelectorAll('.red-box');
 
 input.forEach(word => {
     word.addEventListener('click', () => {
-        if (!allowInput){
-            return;
-        }
         input.forEach(w => w.classList.remove('selected'));
 
         word.classList.add('selected');
@@ -18,7 +14,10 @@ function checkAnswer(isCorrect) {
     const button = document.getElementById("checkButton");
     if (isCorrect) {
         showSpeechBubble("Great job!");
-        allowInput = false;
+        const allAnswer = document.querySelectorAll('.red-box');
+        allAnswer.forEach(answer => {
+            answer.classList.add('disabled');
+        });
         button.innerHTML = 'Continue <span class="arrow">▶</span>';
         button.onclick = () => window.location.href = 'question3.html';
     }

@@ -2,16 +2,12 @@ let originalDropText = "";
 let draggedText = "";
 let draggedID = "";
 let isCorrect = false;
-let allowInput = true;
 
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
 function drag(ev) {
-    if(allowInput == false){
-        return;
-    }
     draggedText = ev.target.innerText;
     ev.dataTransfer.setData("text", draggedText);
     draggedID = ev.target.id;
@@ -19,9 +15,7 @@ function drag(ev) {
 
 function drop(ev) {
     ev.preventDefault();
-    if(allowInput == false){
-        return;
-    }
+
     const data = ev.dataTransfer.getData("text");
     ev.target.textContent = data;
     ev.target.classList.add("filled");
@@ -56,9 +50,12 @@ function checkAnswer(isCorrect) {
     const button = document.getElementById("checkButton");
     if (isCorrect) {
         showSpeechBubble("Great job!");
+        const allAnswer = document.querySelectorAll('.choice');
+        allAnswer.forEach(answer => {
+            answer.classList.add('disabled');
+        });
         button.innerHTML = 'Continue <span class="arrow">▶</span>';
         button.onclick = () => window.location.href = 'question2.html';
-        allowInput = false;
     } 
     else {
         showSpeechBubble("Try again!");

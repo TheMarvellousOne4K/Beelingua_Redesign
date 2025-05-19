@@ -8,6 +8,9 @@ let userAnswer = [];
 
 wordBank.addEventListener("click", function (e) {
     if (e.target.classList.contains("word-tile")) {
+        if(!allowInput){
+            return;
+        }
         const word = e.target.textContent;
 
        
@@ -21,6 +24,9 @@ wordBank.addEventListener("click", function (e) {
         tile.textContent = word;
         e.target.classList.add('disabled');
         tile.addEventListener("click", function () {
+            if(!allowInput){
+                return;
+            }
             e.target.classList.remove('disabled');
             answerBox.removeChild(tile);
             userAnswer = userAnswer.filter(w => w !== word);
@@ -37,6 +43,10 @@ function checkAnswer(isCorrect) {
     if (isCorrect) {
         showSpeechBubble("Great job!");
         allowInput = false;
+        const allAnswer = document.querySelectorAll('.word-tile');
+        allAnswer.forEach(answer => {
+            answer.classList.add('disabled');
+        });
         button.innerHTML = 'Finished <span class="arrow">▶</span>';
     }
     else {
