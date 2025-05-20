@@ -70,5 +70,9 @@ document.getElementById("checkButton").addEventListener("click", function () {
 function showSpeechBubble(message) {
     const bubble = document.getElementById('speechBubble');
     bubble.textContent = message;
-    bubble.style.display = 'block';
+    bubble.style.opacity = 1;
+
+    setTimeout(() => {
+        bubble.style.opacity = 0;
+    }, 2000);
 }
